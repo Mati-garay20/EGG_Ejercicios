@@ -17,9 +17,9 @@ public class Ejercicio20 {
         
         Scanner leer = new Scanner(System.in);
         
-        int[][] matriz = new int[3][3];
-        int contador = 0;
-        int suma1 = 0, suma2 = 0, sumacol = 0, sumafil = 0, sumaant = 0;
+        int matriz[][] = new int[3][3];
+        
+        int diagon1 = 0, diagon2 = 0, sumacol = 0, sumafil = 0, sumaant = 0;
         
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -30,20 +30,20 @@ public class Ejercicio20 {
                     sumafil += matriz[i][j];
                     
                      if(i==j){   
-                     suma1 +=  matriz[i][j];      
+                     diagon1 +=  matriz[i][j];      
                      }  if(j==(2-i)){                    
-                        suma2 += matriz[i][j];     
+                        diagon2 += matriz[i][j];     
                                     
                  }
             }
-         if(i == 0){
-             sumaant = sumafil;
-         }else{
-            if(sumaant != sumafil){
-                sumaant = 0;
-            } 
-         }
-          sumafil = 0;     
+            if(i == 0){
+                sumaant = sumafil;
+            }else{
+               if(sumaant != sumafil){
+                   sumaant = 0;
+               } 
+            }
+             sumafil = 0;     
         }
         
         for (int j = 0; j < 3; j++) {
@@ -66,7 +66,7 @@ public class Ejercicio20 {
             System.out.println("");     
         }
        
-        if((suma1==suma2) && (suma1 == sumaant)){
+        if((diagon1==diagon2) && (diagon1 == sumaant)){
             System.out.println("El cubo es mágico!!");
         } else{
             System.out.println("Volver a intentar");
@@ -75,3 +75,49 @@ public class Ejercicio20 {
     }     
      
 }
+/*
+public static void main(String[] args) {
+        Scanner leer = new Scanner(System.in);
+        int matriz[][]= new int[3][3];
+        int[] cuadrado = new int [8];
+        boolean confirmar = true;
+        //3 f
+        //3 c
+        //2 d
+        int num;
+        
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                do {
+                    System.out.print("["+i+"]"+"["+j+"]: ");  
+                    num = leer.nextInt();
+                } while (num>9 || num<1);
+                //FILAS del 0 -2
+                cuadrado[i] += num;  
+                //COLUMNAS del 3 - 5
+                cuadrado[j+3] += num;
+                //DIAGONALES 6 y 7
+                if(i==j){
+                    cuadrado[6]+=num;
+                }
+                if(j==(2-i)){
+                    cuadrado[7]+=num;
+                }
+            }
+        }
+        //15 15 15 15 15 15 15 15 15
+        num = cuadrado[0];
+        for (int i = 1; i < 8; i++) {
+            System.out.print(cuadrado[i]+" ");
+            if(num!=cuadrado[i]){
+                confirmar = false;
+                break;
+            }
+        }
+        if(confirmar){
+            System.out.println("Es mágico");
+        }else{
+            System.out.println("No es mágico");
+        }        
+    }
+*/

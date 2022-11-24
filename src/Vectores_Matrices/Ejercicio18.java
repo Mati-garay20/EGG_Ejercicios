@@ -13,18 +13,27 @@ cambiando sus filas por columnas (o viceversa).
     public static void main(String[] args) {
         
         Scanner leer = new Scanner(System.in);
-        double matriz[][]= new double [4][4];
+        int matriz[][]= new int [4][4];
         int i,j;
         
+        System.out.println("Matriz original");
         for ( i = 0; i < 4; i++) {
-            for (j = 0; j < 10; j++) {
+            for (j = 0; j < 4; j++) {
                 
-                matriz[i][j]= Math.floor(Math.random()*20);
-                System.out.println(matriz[i][j]);
+                matriz[i][j]= (int)(Math.random()*10);
+                System.out.print("["+ matriz[i][j] +"]");
                 
             }
+            System.out.println("");
         }
         
+        System.out.println("Matriz Traspuesta");
+        for ( j = 0; j < 4; j++) {
+            for ( i = 0; i < 4; i++) {
+                System.out.print("["+ matriz[i][j] +"]");
+            }
+            System.out.println("");
+        }
         
     }
 }

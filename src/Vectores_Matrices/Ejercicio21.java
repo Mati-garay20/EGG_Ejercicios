@@ -17,6 +17,33 @@ public class Ejercicio21 {
         */
         
         Scanner leer = new Scanner(System.in);
+        int matrizM[][] = new int [10][10];
+        int matrizP [][] = new int [3][3];
+        
+        System.out.println("Matriz de 10X10");
+        
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                
+                matrizM[i][j]= (int)(Math.random()*2);
+                System.out.print("["+ matrizM[i][j] +"]");
+            }
+            System.out.println("");
+        }
+        
+        System.out.println("Matriz de 3X3");
+        
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                matrizP[i][j]= (int)(Math.random()*2);
+                System.out.print("["+ matrizP[i][j] +"]");
+            }
+            System.out.println("");
+        }
+        
+        if(matrizM == matrizP){
+            System.out.println("");
+        }
         
     }
 }
